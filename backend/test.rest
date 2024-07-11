@@ -1,0 +1,68 @@
+# 1. Create a Manager
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "firstName": "Alice",
+  "lastName": "Smith",
+  "email": "alice.smith@example.com",
+  "dateStarted": "2023-07-11T00:00:00.000Z",
+  "salary": 120000,
+  "role": "manager"
+}
+
+###
+
+# 2. Create a Worker (replace <MANAGER_ID> with the ID of the created manager)
+POST http://localhost:3001/users
+Content-Type: application/json
+
+{
+  "firstName": "Bob",
+  "lastName": "Johnson",
+  "email": "bob.johnson@example.com",
+  "dateStarted": "2023-07-11T00:00:00.000Z",
+  "salary": 60000,
+  "role": "worker",
+  "manager": "668fa76e41b3c6d47615c755"
+}
+
+###
+
+# 3. Get All Users
+GET http://localhost:3000/users
+Content-Type: application/json
+
+###
+
+# 4. Get a User by ID (replace <USER_ID> with the actual user ID)
+GET http://localhost:3000/user/668fcb6d41b3c6d47615f54a
+Content-Type: application/json
+
+###
+
+# 5. Update a User by ID (replace <USER_ID> with the actual user ID)
+PUT http://localhost:3000/user/668fcb6d41b3c6d47615f54a
+Content-Type: application/json
+
+{
+  "firstName": "Bob2",
+  "lastName": "John",
+  "email": "bob.johnson@example.com",
+  "dateStarted": "2023-07-11T00:00:00.000Z",
+  "salary": 65000,
+  "role": "manager"
+
+}
+
+###
+
+# 6. Delete a User by ID (replace <USER_ID> with the actual user ID)
+DELETE http://localhost:3000/user/668fcb6d41b3c6d47615f54a
+Content-Type: application/json
+
+###
+
+# 7. Get a Manager and Their Employees by Manager ID (replace <MANAGER_ID> with the ID of the created manager)
+GET http://localhost:3000/managers/668fa76e41b3c6d47615c755/employees
+Content-Type: application/json

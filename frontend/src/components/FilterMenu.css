@@ -1,0 +1,35 @@
+.filter-menu {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  margin-bottom: 12px;
+  align-items: center; /* Ensure vertical alignment */
+}
+.buttons-filter{
+    display: flex;
+    gap: 10px;
+    
+}
+.search-input, .filter-select, .add-user-button {
+  padding: 8px;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-medium);
+  border: 1px solid var(--light-color);
+  border-radius:15px;
+  background-color: var(--light-color);
+  margin: 0;
+}
+
+
+.add-user-button {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border: none;
+  cursor: pointer;
+  width: 150px;
+  padding: 10px 16px;
+}
+
+.add-user-button:hover {
+  background-color: var(--secondary-color);
+}

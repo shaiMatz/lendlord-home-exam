@@ -32,6 +32,7 @@ if (runMode === 'app') {
 
   server.use(
     koaCors({
+        origin: 'http://localhost:3001',
       methods: 'POST, GET, PUT, DELETE, OPTIONS',
       allowMethods: 'Origin, X-Requested-With, Content-Type, Accept',
       credentials: true

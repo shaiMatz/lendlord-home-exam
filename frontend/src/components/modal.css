@@ -7,16 +7,15 @@
   top: 0;
   left: 0;
   overflow: auto; /* Enable scroll if needed */
-  padding-top: 80px; /* Location of the content container */
 }
 
 .basic-modal .basic-modal-content {
   position: relative;
-  background-color: white;
+  background-color:var(--light-color);
   width: 600px; /* Width in proportion to its parent container*/
   max-width: 680px; /* Max width where it stops expanding */
   margin: auto; /* Auto margin according to the element width */
-  padding: 20px;
+  padding: 40px;
   border-radius: 6px; /* Optional. Rounds container corners */
   top: 5%;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -28,7 +27,20 @@
   position: absolute;
   top: 20px;
   right: 20px;
+  border: none;
+  width: 30px;
+  font-size: 25px;
   z-index: 1;
+  cursor: pointer;
+  border-radius: 50%;
+    background-color: var(--light-color);
+
+}
+
+.basic-modal .basic-modal-content > .close:hover {
+  color: var(--dark-color);
+    background-color: #f0f0f0;
+
 }
 
 

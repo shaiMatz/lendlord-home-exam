@@ -1,0 +1,42 @@
+.actions {
+  position: relative;
+}
+
+.menu-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.menu-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: var(--white-color);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+  z-index: 1;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-item {
+  padding: 8px 16px;
+  cursor: pointer;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-medium);
+  color: var(--dark-color);
+  text-align: left;
+}
+
+.dropdown-item:hover {
+  background-color: var(--light-color);
+}
