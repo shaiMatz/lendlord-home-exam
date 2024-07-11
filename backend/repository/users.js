@@ -54,7 +54,7 @@ class Users {
         }
       }
     }
-    console.log("update", update) 
+    console.log("update", update)
     return usersModel.updateOne({ _id: id }, { $set: update });
   }
 
