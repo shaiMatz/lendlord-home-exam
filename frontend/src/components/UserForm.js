@@ -63,10 +63,11 @@ const UserForm = ({ onSave, user }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (editingUser) {
-      await updateUserDetails(editingUser._id, formData);
+    if (user) {
+      await updateUserDetails(user._id, formData);
       stopEditing();
     } else {
+      console.log("new user", formData)
       await addUser(formData);
     }
     onSave(); // Close modal after saving

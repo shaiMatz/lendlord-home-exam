@@ -37,23 +37,7 @@ class Users {
 
   // Updates a user document based on the given ID and update data
   async updateOne(id, update) {
-    const user = await this.findOne({ _id: id });
-    console.log("user in update", user)
-    if (user && update.role) {
-      if (update.role === USER_ROLES.MANAGER) {
-        // If updating to a manager role, ensure the 'manager' field is removed
-        update.manager = null;
-      } else if (update.role === USER_ROLES.WORKER || update.role === USER_ROLES.DRIVER) {
-        // If updating to a worker or driver role, ensure a valid manager is assigned
-        if (!update.manager) {
-          throw new Error('A manager must be assigned to workers and drivers.');
-        }
-        const manager = await this.findOne({ _id: update.manager, role: USER_ROLES.MANAGER });
-        if (!manager) {
-          throw new Error('The assigned manager does not exist or is not a manager.');
-        }
-      }
-    }
+
     console.log("update", update)
     return usersModel.updateOne({ _id: id }, { $set: update });
   }
